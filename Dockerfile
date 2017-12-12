@@ -16,4 +16,6 @@ RUN  apt-get -y install vim  && \
      chmod a+x /usr/bin/repo && \
      git clone https://github.com/VundleVim/Vundle.vim.git /home/pokyuser/.vim/bundle/Vundle.vim && \
      chown -R usersetup:usersetup /home/pokyuser
+USER usersetup
+   repo init
 
