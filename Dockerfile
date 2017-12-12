@@ -8,14 +8,13 @@ RUN  apt-get -y install vim  && \
      cd dotFiles && \ 
      git checkout pokyFiles && \ 
      cd .. && \ 
-     mv dotFiles /home/pokyuser/ && \ 
-     ln -sf /home/pokyuser/dotFiles/.bashrc /home/pokyuser/.bashrc && \ 
-     ln -sf /home/pokyuser/dotFiles/.bashrc /home/pokyuser/.vimrc && \ 
-     chown -R usersetup:usersetup /home/pokyuser/* && \ 
+     mv dotFiles /home/usersetup/ && \ 
+     ln -sf /home/usersetup/dotFiles/.bashrc /home/usersetup/.bashrc && \ 
+     ln -sf /home/usersetup/dotFiles/.bashrc /home/usersetup/.vimrc && \ 
+     chown -R usersetup:usersetup /home/usersetup/* && \ 
      curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > /usr/bin/repo && \ 
      chmod a+x /usr/bin/repo && \
-     git clone https://github.com/VundleVim/Vundle.vim.git /home/pokyuser/.vim/bundle/Vundle.vim && \
-     chown -R usersetup:usersetup /home/pokyuser
-USER usersetup
-   repo init
+     git clone https://github.com/VundleVim/Vundle.vim.git /home/usersetup/.vim/bundle/Vundle.vim && \
+     chown -R usersetup:usersetup /home/usersetup 
+
 
