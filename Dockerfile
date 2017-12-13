@@ -25,7 +25,7 @@ RUN  vim +PluginInstall +qall &&\
      ./install.py
 USER root
 RUN  mkdir -p /home/pokyuser && \
-     cp -a /home/usersetup/* /home/pokyuser/* && \
+     cp -a /home/usersetup/ /home/pokyuser/ && \
      chown -R usersetup:usersetup /home/pokyuser
    
 
