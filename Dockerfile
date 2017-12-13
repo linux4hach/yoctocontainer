@@ -17,7 +17,7 @@ RUN  apt-get -y install vim  && \
      git clone https://github.com/VundleVim/Vundle.vim.git /home/usersetup/.vim/bundle/Vundle.vim && \
      chown -R usersetup:usersetup /home/usersetup 
 USER usersetup
-RUN     vim +PluginInstall +qall >/dev/null && \
+RUN  vim +PluginInstall +qall > /dev/null &&\
      cd /home/usersetup/.vim/bundle/YouCompleteMe && \
      ./install.py
    
