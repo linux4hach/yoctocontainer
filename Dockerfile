@@ -23,6 +23,10 @@ USER usersetup
 RUN  vim +PluginInstall +qall &&\
      cd /home/usersetup/.vim/bundle/YouCompleteMe && \
      ./install.py
+USER root
+RUN  mkdir -p /home/pokyuser && \
+     cp -rf /home/usersetup/* /home/pokyuser && \
+     chown -R usersetup:usersetup /home/pokyuser
    
 
 
