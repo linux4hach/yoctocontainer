@@ -4,7 +4,7 @@ MAINTAINER Christopher Fair <cfair.hach.com>
 USER root
 RUN  apt-get -y install vim  && \ 
      apt-get -y install curl && \ 
-     apt-get -y install cmake3 && \
+     apt-get -y install cmake && \
      apt-get install python-dev python3-dev \
      apt-get -y install exuberant-ctags && \
      git clone https://github.com/linux4hach/dotFiles.git && \ 
