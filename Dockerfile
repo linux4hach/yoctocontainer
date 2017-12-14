@@ -26,7 +26,12 @@ RUN  vim +PluginInstall +qall &&\
 USER root
 RUN  mkdir -p /home/pokyuser && \
      cp -ruT /home/usersetup /home/pokyuser && \
-     chown -R usersetup:usersetup /home/pokyuser
+     chown -R usersetup:usersetup /home/pokyuser && \
+     echo "In order to use this docker correctly you should create a directory in /opt/hachdev
+     called .vimtmp this is because the default .vimrc in this docker users that for temp files.
+     It will work without it but will require you to enter :wq! instead of :wq to exit and you
+     will not have the features associated with backup files."
+
    
 
 
