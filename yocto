@@ -1,0 +1,13 @@
+#! /bin/bash
+
+HACH_DEV=/opt/hachdev
+BASE_NAME=${HACH_DEV}/buildsystem
+PROJECT_NAME=$1
+WORKSPACE=${BASE_NAME}/${PROJECT_NAME}
+DOCKER_REPO=quenyen/yoctocontainer
+
+if [ ! -d ${WORKSPACE} ]; then
+   mkdir -p ${WORKSPACE}
+fi
+
+docker run --rm -it -v ${HACH_DEV}:${HACH_DEV} ${DOCKER_REPO} --workdir=${WORKSPACE}
